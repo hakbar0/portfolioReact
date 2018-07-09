@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Unity, {UnityContent} from "react-unity-webgl";
+
 import "./styles/main.css";
 
 import logo from "./images/play-button1.png";
@@ -31,7 +33,6 @@ modelBox = (title, image) => {
 hide = (status) => {
 this.setState({style: status});
 }
-
   render() {
     return (
       <div className="App">
@@ -201,13 +202,16 @@ this.setState({style: status});
         </div>
       : 
       
-      <div id="myModal" className={`modal`} style={{ display: this.state.style }}>
-      <div className={`modal-content`}>
-        <span className={`close`} onClick={this.hide.bind(null, "none")}>&times;</span>
-        <h1>{this.state.title}</h1>
-        <img src={blockAdventure} alt="Game" />
-      </div>
-    </div>
+    //   <div id="myModal" className={`modal`} style={{ display: this.state.style }}>
+    //   <div className={`modal-content`}>
+    //     <span className={`close`} onClick={this.hide.bind(null, "none")}>&times;</span>
+    //     <h1>{this.state.title}</h1>
+    //     <img src={blockAdventure} alt="Game" />
+    //   </div>
+    // </div>
+<Unity 
+            src="games/Space-Cuisine/Build/Space-Cuisine.json" 
+            loader=' "games/Space-Cuisine/Build/UnityLoader.js"' />
 }
       </div>
     );
