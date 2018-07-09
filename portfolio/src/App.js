@@ -18,12 +18,27 @@ class App extends Component {
 
 state = {
   title: "",
-  content: ""
+  image: "",
+  style: "none"
+}
+
+modelBox = (title, image) => {
+  this.setState({title});
+  this.setState({image});
+  this.hide("block");
+}
+
+hide = (status) => {
+this.setState({style: status});
 }
 
   render() {
     return (
       <div className="App">
+        
+      {!this.state.title ?
+
+        <div className = "Content">
         <div id="wrap">
           <header>
             <div class="image">
@@ -66,12 +81,8 @@ state = {
               <span style={{ color: "gold" }}> Work</span>
             </p>
             <work>
-              <a
-                target="_blank"
-                href="http://www.indiedb.com/members/lastingspark/downloads/block-adventure"
-                class="block-adventure-a"
-              >
-                <div class="card block-adventure">
+
+                <div class="card block-adventure" onClick ={this.modelBox.bind(null, 'Block-adventure', 'blockAdventure' )}>
                   <img
                     class="card-img-top"
                     src={blockAdventure}
@@ -81,7 +92,6 @@ state = {
                     <h5 class="card-title">Block Adventure</h5>
                   </div>
                 </div>
-              </a>
 
               <a
                 target="_blank"
@@ -187,7 +197,18 @@ state = {
               </a>
             </li>
           </footer>
+          </div>
         </div>
+      : 
+      
+      <div id="myModal" className={`modal`} style={{ display: this.state.style }}>
+      <div className={`modal-content`}>
+        <span className={`close`} onClick={this.hide.bind(null, "none")}>&times;</span>
+        <h1>{this.state.title}</h1>
+        <img src={blockAdventure} alt="Game" />
+      </div>
+    </div>
+}
       </div>
     );
   }
