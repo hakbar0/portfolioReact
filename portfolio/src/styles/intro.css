@@ -1,0 +1,27 @@
+section {
+  line-height: 200%;
+  padding-top: 100px;
+  margin-left: 20px;
+  text-align: left;
+  font-size: 18px; 
+  animation: 1s fade 0.5s forwards;
+  opacity: 0;
+  color: rgb(77, 73, 73);
+}
+
+@keyframes fade {
+  100%{
+    opacity: 1;
+  }
+}
+
+section .recent {
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+a{
+  text-decoration: none;
+  opacity: 0.8;
+  color: black;
+}
