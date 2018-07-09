@@ -15,6 +15,12 @@ import youtube from "./images/youtube.png";
 import linkedin from "./images/linkedin.svg";
 
 class App extends Component {
+
+state = {
+  title: "",
+  content: ""
+}
+
   render() {
     return (
       <div className="App">
