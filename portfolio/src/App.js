@@ -211,7 +211,7 @@ unityContent = new UnityContent(
       <div className={`modal-content`}>
         <span className={`close`} onClick={this.hide.bind(null, "none")}>&times;</span>
         <h1>{this.state.title}</h1>
-         <div><Unity unityContent={this.unityContent} /></div>
+         <Unity unityContent={this.unityContent}/>
       </div>
     </div>
 }

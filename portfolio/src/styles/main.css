@@ -245,8 +245,8 @@ footer li .github, .youtube{
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 800px;
-  height: 800px;
+  width: 90%;
+  height: 100%;
 }
 
 /* The Close Button */
@@ -264,6 +264,3 @@ footer li .github, .youtube{
   cursor: pointer;
 }
 
-#canvas{
-  height: 100px;
-}
