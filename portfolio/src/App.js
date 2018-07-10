@@ -33,12 +33,18 @@ modelBox = (title, image) => {
 hide = (status) => {
 this.setState({style: status});
 }
+
+
+unityContent = new UnityContent(
+  "games/Space-Cuisine/Build/Space-Cuisine.json",
+  "games/Space-Cuisine/Build/UnityLoader.js"
+);
+
+
   render() {
     return (
       <div className="App">
         
-      {!this.state.title ?
-
         <div className = "Content">
         <div id="wrap">
           <header>
@@ -83,7 +89,7 @@ this.setState({style: status});
             </p>
             <work>
 
-                <div class="card block-adventure" onClick ={this.modelBox.bind(null, 'Block-adventure', 'blockAdventure' )}>
+                <div class="card block-adventure" onClick ={this.modelBox.bind(null, 'Block Adventure', 'blockAdventure' )}>
                   <img
                     class="card-img-top"
                     src={blockAdventure}
@@ -200,18 +206,14 @@ this.setState({style: status});
           </footer>
           </div>
         </div>
-      : 
-      
-    //   <div id="myModal" className={`modal`} style={{ display: this.state.style }}>
-    //   <div className={`modal-content`}>
-    //     <span className={`close`} onClick={this.hide.bind(null, "none")}>&times;</span>
-    //     <h1>{this.state.title}</h1>
-    //     <img src={blockAdventure} alt="Game" />
-    //   </div>
-    // </div>
-<Unity 
-            src="games/Space-Cuisine/Build/Space-Cuisine.json" 
-            loader=' "games/Space-Cuisine/Build/UnityLoader.js"' />
+
+      <div id="myModal" className={`modal`} style={{ display: this.state.style }}>
+      <div className={`modal-content`}>
+        <span className={`close`} onClick={this.hide.bind(null, "none")}>&times;</span>
+        <h1>{this.state.title}</h1>
+         <div><Unity unityContent={this.unityContent} /></div>
+      </div>
+    </div>
 }
       </div>
     );
