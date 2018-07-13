@@ -21,18 +21,25 @@ class App extends Component {
 state = {
   title: "",
   image: "",
-  style: "none"
+  style: "none",
+  unity: false,
+  instruction: ""
 }
 
-modelBox = (title, image) => {
+modelBox = (title, image, unity, instruction) => {
   this.setState({title});
   this.setState({image});
   this.hide("block");
+  this.setState({unity});
+  this.setState({instruction});
 }
 
 hide = (status) => {
 this.setState({style: status});
+this.setState({unity: false});
 }
+
+
 
 
 unityContent = new UnityContent(
@@ -76,8 +83,7 @@ unityContent = new UnityContent(
 
           <content>
             <p class="intro">
-              Hi, I’m Haseeb Akbar, a junior
-              <span styles={{ color: "gold" }}> developer</span> living in
+              Hi, I’m Haseeb Akbar, a junior <span> developer</span> living in
               Basingstoke and working at Starkwood Media.
             </p>
           </content>
@@ -89,7 +95,7 @@ unityContent = new UnityContent(
             </p>
             <work>
 
-                <div class="card block-adventure" onClick ={this.modelBox.bind(null, 'Block Adventure', 'blockAdventure' )}>
+                <div class="card block-adventure" onClick ={this.modelBox.bind(null, 'Block Adventure', 'blockAdventure', true, "Use the arrows keys to move and space to hover. Please wait patiently for the game to load and click on the black screen." )}>
                   <img
                     class="card-img-top"
                     src={blockAdventure}
@@ -211,7 +217,13 @@ unityContent = new UnityContent(
       <div className={`modal-content`}>
         <span className={`close`} onClick={this.hide.bind(null, "none")}>&times;</span>
         <h1>{this.state.title}</h1>
-         <Unity unityContent={this.unityContent}/>
+
+          <div className = "unity">
+          {this.state.unity && <Unity unityContent={this.unityContent} className="my-unity-app" height="100%" width="100%"/>  }
+          </div>
+
+          <div className ="instruction">{this.state.instruction}</div>
+        
       </div>
     </div>
 }
