@@ -76,7 +76,7 @@ a{
   color: black;
 }
 
-a:hover{
+a:hover, .space-a:hover, .hack-a:hover{
   opacity: 1;
   color: gold;
 }
@@ -122,7 +122,7 @@ header nav li, footer li{
   }
   
   .image {
-    opacity: 1;
+    opacity: 0.9;
   }
   
   .image:hover{
@@ -203,7 +203,7 @@ work .card-title{
 @media (min-width: 900px) {
   work .nc-news-a, .nc-buddy-a, .crypto-app-a, .squash-toad-a, .blocks-a, .block-adventure-a, .space-a, .hack-a{
     width: 50%;
-    opacity: 1;
+    opacity: 0.9;
     margin-bottom: 30px;
     font-size: 10px;
   }
@@ -219,10 +219,6 @@ work .card-title{
     font-size: 40px;
   }
 }
-
-
-
-
 
 /* Footer */
 
@@ -305,12 +301,3 @@ footer li .github, .youtube{
   font-size: 15px;
 }
 
-.image-pop{
-  height: 50%;
-  width: 50%;
-}
-
-.image-center{
-  display: flex;
-  justify-content: center;
-}
