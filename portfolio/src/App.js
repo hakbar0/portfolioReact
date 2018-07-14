@@ -26,7 +26,9 @@ state = {
   style: "none",
   space: false,
   hacker: false,
-  instruction: ""
+  instruction: "",
+  height: "100%",
+  width: "100%"
 }
 
 modelBox = (title, image, space, hacker, instruction) => {
@@ -42,6 +44,17 @@ hide = (status) => {
 this.setState({style: status});
 this.setState({hacker: false});
 this.setState({space: false});
+}
+
+percent = () =>{
+  if(window.innerWidth > 1100) {
+    this.setState({height: "400px"});
+    this.setState({width: "100%"});
+  }
+}
+
+componentWillMount(){
+  setInterval(() => this.percent(), 1000);
 }
 
 
@@ -61,7 +74,6 @@ space = new UnityContent(
   render() {
     return (
       <div className="App">
-        
         <div className = "Content">
         <div id="wrap">
           <header>
@@ -259,8 +271,8 @@ space = new UnityContent(
         <h1>{this.state.title}</h1>
 
           <div className = "unity">
-          {this.state.hacker&& <Unity unityContent={this.hacker} className="my-unity-app" height="100%" width="100%"/>  }
-          {this.state.space&& <Unity unityContent={this.space} className="my-unity-app" height="100%" width="100%"/>  }
+          {this.state.hacker&& <Unity unityContent={this.hacker} className="my-unity-app" height={this.state.height} width = {this.state.width}/>  }
+          {this.state.space&& <Unity unityContent={this.space} className="my-unity-app" height= {this.state.height} width = {this.state.width}/>  }
           <div id = "note">Do not resize screen once game has loaded.</div>
           </div>
 

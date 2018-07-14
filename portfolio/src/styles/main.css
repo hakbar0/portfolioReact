@@ -262,6 +262,7 @@ footer li .github, .youtube{
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
+  background: gold;
   width: 90%;
   height: 90%;
 }

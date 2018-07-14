@@ -6,7 +6,8 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",
-    "react-unity-webgl": "^7.0.4"
+    "react-unity-webgl": "^7.0.4",
+    "react-window-size": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
