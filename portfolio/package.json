@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "homepage": "https://hakbar0.github.io/portfolioReact/",
+  "main": "index.js",
   "private": true,
   "dependencies": {
     "react": "^16.4.1",
