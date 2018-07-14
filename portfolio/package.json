@@ -1,8 +1,6 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://hakbar0.github.io/portfolioReact/",
-  "main": "index.js",
   "private": true,
   "dependencies": {
     "react": "^16.4.1",
@@ -15,8 +13,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

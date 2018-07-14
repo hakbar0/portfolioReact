@@ -1,0 +1,27 @@
+{
+  "name": "portfolioreact",
+  "version": "1.0.0",
+  "description": "Portfolio Made in React",
+  "main": "server.js",
+  "dependencies": {
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "react-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakbar0/portfolioReact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hakbar0/portfolioReact/issues"
+  },
+  "homepage": "https://github.com/hakbar0/portfolioReact#readme"
+}
