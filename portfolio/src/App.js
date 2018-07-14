@@ -48,7 +48,11 @@ this.setState({space: false});
 
 percent = () =>{
   if(window.innerWidth > 1100) {
-    this.setState({height: "400px"});
+    this.setState({height: "450px"});
+    this.setState({width: "100%"});
+  }
+  else if(window.innerWidth > 1400) {
+    this.setState({height: "475px"});
     this.setState({width: "100%"});
   }
 }
