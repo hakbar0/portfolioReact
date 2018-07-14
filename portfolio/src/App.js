@@ -3,14 +3,10 @@ import Unity, {UnityContent} from "react-unity-webgl";
 
 import "./styles/main.css";
 
+import Content from "./Content"
+
 import logo from "./images/play-button1.png";
 
-import blockAdventure from "./images/block-adventure.png";
-import blocks from "./images/blocks.png";
-import frogger from "./images/frogger.png";
-import crypto from "./images/crypto-app.png";
-import news from "./images/nc-news.png";
-import ncbuddy from "./images/nc-buddy.png";
 import space from "./images/space.png";
 import hack from './images/hack.png';
 
@@ -28,7 +24,7 @@ state = {
   hacker: false,
   instruction: "",
   height: "100%",
-  width: "100%"
+  width: "100%",
 }
 
 modelBox = (title, image, space, hacker, instruction) => {
@@ -60,9 +56,6 @@ percent = () =>{
 componentWillMount(){
   setInterval(() => this.percent(), 1000);
 }
-
-
-
 
 hacker = new UnityContent(
   "games/hacker/Build/hacker.json",
@@ -134,7 +127,7 @@ space = new UnityContent(
                 </div>
 
                 <div className ="hack-a">
-                <div className = "card hack" onClick = {this.modelBox.bind(null, 'Terminal Hacker', 'hack', false, true, "Use the arrows keys to move and space to hover. Please wait patiently for the game to load and click on the black screen.")}>
+                <div className = "card hack" onClick = {this.modelBox.bind(null, 'Terminal Hacker', 'hack', false, true, "Type the password, which has been mixed. Please wait patiently for the game to load and click on the black screen.")}>
               <img 
               className="card-img-top"
               src={hack}
@@ -146,92 +139,9 @@ space = new UnityContent(
                 </div>
                 </div>
 
+                <Content/>
+
    
-                <a target="_blank" href="http://www.indiedb.com/members/lastingspark/downloads/block-adventure" class = "block-adventure-a">
-                <div class="card block-adventure">
-                  <img
-                    class="card-img-top"
-                    src={blockAdventure}
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Block Adventure</h5>
-                    </div>
-                    </div></a>
-
-
-              <a
-                target="_blank"
-                href="https://play.google.com/store/apps/details?id=com.Haseeb.Blocks"
-                class="blocks-a"
-              >
-                <div class="card blocks">
-                  <img class="card-img-top" src={blocks} alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">Falling Blocks</h5>
-                  </div>
-                </div>
-              </a>
-
-              <a
-                target="_blank"
-                href="https://github.com/hakbar0/Crypto-App"
-                class="crypto-app-a"
-              >
-                <div class="card crypto-app">
-                  <img class="card-img-top" src={crypto} alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">Crypto App</h5>
-                  </div>
-                </div>
-              </a>
-
-              <a
-                target="_blank"
-                href="https://www.youtube.com/watch?v=_BgOqZJitGU&feature=youtu.be"
-                class="squash-toad-a"
-              >
-                <div class="card squash-toad">
-                  <img
-                    class="card-img-top"
-                    src={frogger}
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Squash Toad</h5>
-                  </div>
-                </div>
-              </a>
-
-              <a
-                target="_blank"
-                href="https://nc-news-test-2.herokuapp.com/"
-                class="nc-news-a"
-              >
-                <div class="card nc-news nc-news">
-                  <img class="card-img-top" src={news} alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">NC-NEWS</h5>
-                  </div>
-                </div>
-              </a>
-
-              <a
-                target="_blank"
-                href="https://github.com/NC-Companion/nc-companion"
-                class="nc-buddy-a"
-              >
-                <div class="card nc-buddy">
-                  <img
-                    class="card-img-top"
-                    src={ncbuddy}
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">NC-Buddy</h5>
-                  </div>
-                </div>
-              </a>
             </work>
           </featured>
 
@@ -277,11 +187,11 @@ space = new UnityContent(
           <div className = "unity">
           {this.state.hacker&& <Unity unityContent={this.hacker} className="my-unity-app" height={this.state.height} width = {this.state.width}/>  }
           {this.state.space&& <Unity unityContent={this.space} className="my-unity-app" height= {this.state.height} width = {this.state.width}/>  }
-          <div id = "note">Do not resize screen once game has loaded.</div>
+         <div id = "note">Do not resize screen once game has loaded.</div>
           </div>
 
           <div className ="instruction">{this.state.instruction}</div>
-        
+          
       </div>
     </div>
 }

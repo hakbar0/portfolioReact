@@ -305,3 +305,12 @@ footer li .github, .youtube{
   font-size: 15px;
 }
 
+.image-pop{
+  height: 50%;
+  width: 50%;
+}
+
+.image-center{
+  display: flex;
+  justify-content: center;
+}
