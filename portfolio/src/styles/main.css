@@ -17,6 +17,7 @@ body {
   padding: 10px;
   font-family: 'Raleway', sans-serif;
 }
+
 #wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,6 +48,15 @@ featured {
   width: 86vw;
   height: auto;
   margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+work{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 footer{
@@ -112,7 +122,7 @@ header nav li, footer li{
   }
   
   .image {
-    opacity: 0.8;
+    opacity: 1;
   }
   
   .image:hover{
@@ -175,13 +185,15 @@ work{
 
 
 
-work .nc-news, .nc-buddy, .squash-toad, .featured, .crypto-app, .blocks, .block-adventure{
+work .nc-news, .nc-buddy, .squash-toad, .featured, .crypto-app, .blocks, .block-adventure, .space, .hack{
   opacity: 0;
-  width: 90%;
   -webkit-animation: 1s slide 1s forwards;
           animation: 1s slide 1s forwards;
   margin-bottom: 30px;
-  margin-left: 5%;
+}
+
+.card-img-top{
+  height: 400px;
 }
 
 work .card-title{
@@ -189,7 +201,7 @@ work .card-title{
 }
 
 @media (min-width: 900px) {
-  work .nc-news-a, .nc-buddy-a, .crypto-app-a, .squash-toad-a, .blocks-a, .block-adventure-a{
+  work .nc-news-a, .nc-buddy-a, .crypto-app-a, .squash-toad-a, .blocks-a, .block-adventure-a, .space-a, .hack-a{
     width: 50%;
     opacity: 1;
     margin-bottom: 30px;
@@ -244,6 +256,7 @@ footer li .github, .youtube{
 
 /* Modal Content */
 .modal-content {
+  font-family: 'Knewave', cursive;
   text-align: center;
   background-color:	whitesmoke;
   margin: auto;
@@ -253,11 +266,17 @@ footer li .github, .youtube{
   height: 90%;
 }
 
+
+.cross{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 /* The Close Button */
 .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
+  color: black;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -271,7 +290,6 @@ footer li .github, .youtube{
 .unity{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   margin-top: 30px;
 }
 
@@ -280,3 +298,13 @@ footer li .github, .youtube{
   font-size: 25px;
 }
 
+#note{
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+}
+
+.row-1{
+  display: flex;
+
+}

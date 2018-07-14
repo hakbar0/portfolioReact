@@ -11,6 +11,8 @@ import frogger from "./images/frogger.png";
 import crypto from "./images/crypto-app.png";
 import news from "./images/nc-news.png";
 import ncbuddy from "./images/nc-buddy.png";
+import space from "./images/space.png";
+import hack from './images/hack.png';
 
 import github from "./images/github.png";
 import youtube from "./images/youtube.png";
@@ -22,30 +24,38 @@ state = {
   title: "",
   image: "",
   style: "none",
-  unity: false,
+  space: false,
+  hacker: false,
   instruction: ""
 }
 
-modelBox = (title, image, unity, instruction) => {
+modelBox = (title, image, space, hacker, instruction) => {
   this.setState({title});
   this.setState({image});
   this.hide("block");
-  this.setState({unity});
+  this.setState({space});
+  this.setState({hacker});
   this.setState({instruction});
 }
 
 hide = (status) => {
 this.setState({style: status});
-this.setState({unity: false});
+this.setState({hacker: false});
+this.setState({space: false});
 }
 
 
 
 
-unityContent = new UnityContent(
+hacker = new UnityContent(
+  "games/hacker/Build/hacker.json",
+  "games/hacker/Build/UnityLoader.js"
+);
+
+space = new UnityContent(
   "games/Space-Cuisine/Build/Space-Cuisine.json",
   "games/Space-Cuisine/Build/UnityLoader.js"
-);
+)
 
 
   render() {
@@ -95,7 +105,34 @@ unityContent = new UnityContent(
             </p>
             <work>
 
-                <div class="card block-adventure" onClick ={this.modelBox.bind(null, 'Block Adventure', 'blockAdventure', true, "Use the arrows keys to move and space to hover. Please wait patiently for the game to load and click on the black screen." )}>
+              <div className ="space-a">
+              <div className = "card space" onClick = {this.modelBox.bind(null, 'Space Cuisine', 'space', true, false, "Use the arrows keys to move and space to hover. Please wait patiently for the game to load and click on the black screen.")}>
+              <img 
+              className="card-img-top"
+              src={space}
+              alt="Card image cap"/>
+              <div class="card-body">
+                    <h5 class="card-title">Space Cuisine</h5>
+                  </div>
+                </div>
+                </div>
+
+                <div className ="hack-a">
+                <div className = "card hack" onClick = {this.modelBox.bind(null, 'Terminal Hacker', 'hack', false, true, "Use the arrows keys to move and space to hover. Please wait patiently for the game to load and click on the black screen.")}>
+              <img 
+              className="card-img-top"
+              src={hack}
+              alt="Card image cap"
+              />
+              <div class="card-body">
+                    <h5 class="card-title">Terminal Hacker</h5>
+                  </div>
+                </div>
+                </div>
+
+   
+                <a target="_blank" href="http://www.indiedb.com/members/lastingspark/downloads/block-adventure" class = "block-adventure-a">
+                <div class="card block-adventure">
                   <img
                     class="card-img-top"
                     src={blockAdventure}
@@ -103,8 +140,9 @@ unityContent = new UnityContent(
                   />
                   <div class="card-body">
                     <h5 class="card-title">Block Adventure</h5>
-                  </div>
-                </div>
+                    </div>
+                    </div></a>
+
 
               <a
                 target="_blank"
@@ -181,6 +219,8 @@ unityContent = new UnityContent(
             </work>
           </featured>
 
+      
+
           <footer>
             <li>
               <a target="_blank" href="https://github.com/hakbar0">
@@ -215,11 +255,13 @@ unityContent = new UnityContent(
 
       <div id="myModal" className={`modal`} style={{ display: this.state.style }}>
       <div className={`modal-content`}>
-        <span className={`close`} onClick={this.hide.bind(null, "none")}>&times;</span>
+       <div className ="cross"> <span className={`close`} onClick={this.hide.bind(null, "none")}>&times;</span> </div>
         <h1>{this.state.title}</h1>
 
           <div className = "unity">
-          {this.state.unity && <Unity unityContent={this.unityContent} className="my-unity-app" height="100%" width="100%"/>  }
+          {this.state.hacker&& <Unity unityContent={this.hacker} className="my-unity-app" height="100%" width="100%"/>  }
+          {this.state.space&& <Unity unityContent={this.space} className="my-unity-app" height="100%" width="100%"/>  }
+          <div id = "note">Do not resize screen once game has loaded.</div>
           </div>
 
           <div className ="instruction">{this.state.instruction}</div>
